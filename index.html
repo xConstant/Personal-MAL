@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Push-Up Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>💪 Push-Up Tracker</h1>
+
+  <!-- Push-up Log Form -->
+  <section class="card">
+    <h2>Log Push-Ups</h2>
+
+    <label>
+      Variant:
+      <select id="variant">
+        <option>Standard</option>
+        <option>Wide</option>
+        <option>Diamond</option>
+        <option>Incline</option>
+        <option>Decline</option>
+      </select>
+    </label>
+
+    <label>
+      Reps:
+      <input type="number" id="reps" min="1" />
+    </label>
+
+    <button id="logBtn">Add Log</button>
+  </section>
+
+  <!-- Goal Section -->
+  <section class="card">
+    <h2>Goal</h2>
+
+    <label>
+      Total Push-Ups:
+      <input type="number" id="goalTotal" />
+    </label>
+
+    <label>
+      Days:
+      <input type="number" id="goalDays" />
+    </label>
+
+    <button id="setGoalBtn">Set Goal</button>
+
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+
+    <p id="goalText"></p>
+  </section>
+
+  <!-- Logs -->
+  <section class="card">
+    <h2>Today’s Logs</h2>
+    <ul id="logList"></ul>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
