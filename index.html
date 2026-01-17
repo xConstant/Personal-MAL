@@ -1,66 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Push-Up Tracker</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
 <body>
 
-  <h1>💪 Push-Up Tracker</h1>
+  <header class="header">
+    <h1>Push-Up Tracker</h1>
+    <p>Track your progress. Build consistency.</p>
+  </header>
 
-  <!-- Push-up Log Form -->
-  <section class="card">
-    <h2>Log Push-Ups</h2>
+  <main class="container">
 
-    <label>
-      Variant:
-      <select id="variant">
-        <option>Standard</option>
-        <option>Wide</option>
-        <option>Diamond</option>
-        <option>Incline</option>
-        <option>Decline</option>
-      </select>
-    </label>
+    <!-- Push-Up Logger -->
+    <section class="card">
+      <h2>Log Push-Ups</h2>
 
-    <label>
-      Reps:
-      <input type="number" id="reps" min="1" />
-    </label>
+      <div class="variant-tabs">
+        <button class="variant active">Standard</button>
+        <button class="variant">Wide</button>
+        <button class="variant">Diamond</button>
+        <button class="variant">Incline</button>
+        <button class="variant">Decline</button>
+      </div>
 
-    <button id="logBtn">Add Log</button>
-  </section>
+      <div class="counter">
+        <button id="minusBtn">−</button>
+        <span id="count">0</span>
+        <button id="plusBtn">+</button>
+      </div>
 
-  <!-- Goal Section -->
-  <section class="card">
-    <h2>Goal</h2>
+      <button id="logBtn" class="primary">Add Log</button>
+    </section>
 
-    <label>
-      Total Push-Ups:
-      <input type="number" id="goalTotal" />
-    </label>
+    <!-- Goal -->
+    <section class="card">
+      <h2>Active Goal</h2>
 
-    <label>
-      Days:
-      <input type="number" id="goalDays" />
-    </label>
+      <div class="goal-inputs">
+        <input type="number" id="goalTotal" placeholder="Total push-ups" />
+        <input type="number" id="goalDays" placeholder="Days" />
+      </div>
 
-    <button id="setGoalBtn">Set Goal</button>
+      <button id="setGoalBtn" class="secondary">Set Goal</button>
 
-    <div class="progress">
-      <div id="progressBar"></div>
-    </div>
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
 
-    <p id="goalText"></p>
-  </section>
+      <p id="goalText" class="muted"></p>
+    </section>
 
-  <!-- Logs -->
-  <section class="card">
-    <h2>Today’s Logs</h2>
-    <ul id="logList"></ul>
-  </section>
+    <!-- Today Logs -->
+    <section class="card">
+      <h2>Today</h2>
+      <ul id="logList" class="log-list"></ul>
+    </section>
+
+  </main>
 
   <script src="app.js"></script>
 </body>
-</html>
